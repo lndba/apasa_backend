@@ -9,7 +9,7 @@ from api.pagination.page import MyPageNumberPagination
 
 
 class UserInfoListViewSet(ModelViewSet):
-    queryset = UserInfo.objects.all().order_by('id')
+    queryset = UserInfo.objects.exclude(username='api').order_by('id')
     pagination_class = MyPageNumberPagination
     serializer_class = UserInfoListSerializers
 
